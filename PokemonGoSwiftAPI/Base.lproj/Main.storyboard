@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PokemonGoSwiftAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,75 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-Hl-piD">
+                                <rect key="frame" x="50" y="235" width="500" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3bF-hF-x2O"/>
+                                </constraints>
+                                <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="df4-Wb-102">
+                                <rect key="frame" x="50" y="305" width="500" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PoY-Yw-Aq7"/>
+                                </constraints>
+                                <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Pokémon GO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvz-Q8-Zi9">
+                                <rect key="frame" x="173" y="93" width="253" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0W4-Is-WZY"/>
+                                    <constraint firstAttribute="width" constant="253" id="YgF-g8-dlt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVh-Ad-w3k">
+                                <rect key="frame" x="50" y="415" width="500" height="50"/>
+                                <color key="backgroundColor" red="0.4549019608" green="0.37647058820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Miz-1O-ZAh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pbt-hW-kFH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rtb-Hl-piD" secondAttribute="trailing" constant="30" id="4Mi-yh-Xug"/>
+                            <constraint firstItem="Rtb-Hl-piD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="6yz-Es-rLs"/>
+                            <constraint firstItem="df4-Wb-102" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Dba-c4-3W8"/>
+                            <constraint firstItem="Rtb-Hl-piD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-40" id="Dmb-ir-IoQ"/>
+                            <constraint firstItem="RVh-Ad-w3k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="MD0-St-EPz"/>
+                            <constraint firstItem="Rtb-Hl-piD" firstAttribute="top" secondItem="pvz-Q8-Zi9" secondAttribute="bottom" constant="121" id="TIo-aT-IVn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RVh-Ad-w3k" secondAttribute="trailing" constant="30" id="bNX-fe-jZN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="df4-Wb-102" secondAttribute="trailing" constant="30" id="gxH-gw-jtZ"/>
+                            <constraint firstItem="df4-Wb-102" firstAttribute="top" secondItem="Rtb-Hl-piD" secondAttribute="bottom" constant="20" id="jcq-Bv-Vju"/>
+                            <constraint firstItem="pvz-Q8-Zi9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lou-h3-Bxz"/>
+                            <constraint firstItem="RVh-Ad-w3k" firstAttribute="top" secondItem="df4-Wb-102" secondAttribute="bottom" constant="60" id="ygp-oH-sqM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="RVh-Ad-w3k" id="VBK-NO-RJ6"/>
+                        <outlet property="passwordTextField" destination="df4-Wb-102" id="ubv-Lr-Mne"/>
+                        <outlet property="usernameTextField" destination="Rtb-Hl-piD" id="RDw-kT-SG3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="340" y="268"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.4549019608" green="0.37647058820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

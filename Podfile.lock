@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (3.4.1)
+  - GoogleMaps (1.13.2)
+  - IngeoSDK (1.3.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.1)
+  - GoogleMaps
+  - IngeoSDK
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
+  IngeoSDK: c225d4de8998f733c072d5d82828f7178521c509
+
+PODFILE CHECKSUM: 823972dcbbf315e194ba46fa93329370161c8da4
+
+COCOAPODS: 1.0.1
